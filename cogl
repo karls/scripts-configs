@@ -40,10 +40,13 @@ else
 	fi
 	
 	# Let's make it happen!
+	# NOTE: If you're on a different architecture, change the
+	#       -march and -m flags appropriately
 	gcc \
 	-O3 \
 	-fomit-frame-pointer \
-	-march=i486 \
+	-march=i686 \
+	-m32 \
 	-Wall \
 	-pipe \
 	-DFX \
