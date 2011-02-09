@@ -1,4 +1,10 @@
-# Debian-friendly cogl script
+#!/bin/bash
+#
+# Debian-friendly cogl script for running/compiling coursework/labs programs
+# at home
+#
+# NOTE: This is specific to the COMP27112 course at The University of Manchester
+#
 # Assumes you have
 # 	freeglut3
 # 	freeglut3-dev
@@ -12,7 +18,7 @@
 #
 # Author:      Karl Sutt
 # Last edited: 09/02/2011
-# License:     GPLv3
+# License:     GPLv2
 
 # Prints the usage message
 function usage
