@@ -1,0 +1,63 @@
+# Debian-friendly cogl script
+# Assumes you have
+# 	freeglut3
+# 	freeglut3-dev
+# 	libgl1-mesa-dev
+# 	libglu1-mesa
+# 	libglu1-mesa-dev
+# installed
+#
+# NOTE: I'm not sure which of those are actually needed, but it compiles fine
+#       on my machine with those installed.
+#
+# Author:      Karl Sutt
+# Last edited: 09/02/2011
+# License:     GPLv3
+
+# Prints the usage message
+function usage
+{
+	echo "Usage: cogl <filename.c> <outfile>"
+	echo "       If you omit the <outfile> then a.out will be the default"
+}
+
+# INFILE is the source file
+# OUTFILE is the target file
+# LIBRARYPATH is the path to libraries on user's machine
+INFILE=$1
+OUTFILE=a.out
+# Change this if your include path is different
+LIBRARYPATH=/usr/include
+
+# If we have no arguments, then print usage message and exit
+if [ $# -eq 0 ]; then
+	usage
+	exit 1
+else
+	# If the second argument is provided, then use that instead of a.out
+	if [ "$2" != "" ]; then
+		OUTFILE=$2
+	fi
+	
+	# Let's make it happen!
+	gcc \
+	-O3 \
+	-fomit-frame-pointer \
+	-march=i486 \
+	-Wall \
+	-pipe \
+	-DFX \
+	-DXMESA \
+	-L$LIBRARYPATH \
+	-lGL \
+	-lGLU \
+	-lglut \
+	-lX11 \
+	-lm \
+	-g \
+	-o $OUTFILE \
+	$INFILE
+	
+	# Exit cleanly
+	exit
+fi
