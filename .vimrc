@@ -14,16 +14,11 @@ set nu                    " show line numbers
 syntax on                 " show syntax higlight
 set mouse=a
 
-set guifont=Terminus\ 8
-"set guifont=Monaco\ 7
+"set guifont=Terminus\ 8
 set list
 set listchars=tab:•\ ,trail:· 
-"colorscheme desert
-"colorscheme jellybeans
 colorscheme default
 "set cursorline            " show line highlight
-"colorscheme molokai
-"let g:molokai_original = 0
 
 ""Fix the stupid auto-indentation deletion
 inoremap <CR> <CR><Space><BS>
@@ -37,8 +32,6 @@ nnoremap O O<Space><BS>
 set nobackup
 set noswapfile
 set nowritebackup
-"set guioptions-=m
-"set guioptions-=T
 
 "set tw=80                " auto-wrap long lines
 
