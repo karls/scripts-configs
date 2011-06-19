@@ -1,5 +1,5 @@
 if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
-    set fileencodings=utf-8,latin1
+	set fileencoding=utf8
 endif
 set autoindent            " automatic indentation
 set hlsearch              " highlight search
@@ -16,8 +16,8 @@ set mouse=a
 
 "set guifont=Terminus\ 8
 set list
-set listchars=tab:•\ ,trail:· 
-colorscheme default
+set listchars=tab:⌞\ ,trail:·
+colorscheme slate
 "set cursorline            " show line highlight
 
 ""Fix the stupid auto-indentation deletion
