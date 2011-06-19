@@ -1,0 +1,8 @@
+!clear lock
+!keysym Caps_Lock = Escape
+!keysym Super_R = ISO_Level3_Shift
+
+remove Lock = Caps_Lock
+add control = Caps_Lock
+keycode 66 = Escape
+keycode 134 = ISO_Level3_Shift

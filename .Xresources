@@ -1,0 +1,19 @@
+XTerm*font: -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
+XTerm*background: black
+XTerm*foreground: gray
+XTerm*cursorColor: gray
+XTerm*buffered: true
+
+URxvt*background: black
+URxvt*foreground: gray
+URxvt*cursorColor: gray
+URxvt*underlineColor: yellow
+URxvt*buffered: true
+URxvt*font: xft:Terminus:pixelsize=8:antialias=false
+URxvt*boldFont: xft:Terminus:bold:pixelsize=8:antialias=false
+URxvt*scrollBar: off
+URxvt*secondaryScroll: true
+URxvt*modifier: alt
+URxvt*perl-ext-common: default,matcher
+URxvt*urlLauncher: /usr/bin/google-chrome
+URxvt*matcher.button: 1

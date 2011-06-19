@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/karl/.ncmpcpp'
+let g:netrw_dirhist_2='/home/karl/.vim'
+let g:netrw_dirhist_3='/home/karl/sites/wiikingnew/wp-content/themes/wiiking'
+let g:netrw_dirhist_4='/home/karl/sites/wiiking/wp-content/themes/wiiking'
+let g:netrw_dirhist_5='/home/karl/sites/wiikingnew/wp-content/themes/wiiking'
+let g:netrw_dirhist_6='/home/karl/school/2ndyear/COMP26120/ex8'
+let g:netrw_dirhist_7='/home/karl/sites/lvm/.git'
