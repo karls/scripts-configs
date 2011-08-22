@@ -1,9 +1,10 @@
 " Override or further specify some .vimrc settings
 
-colorscheme jellybeans
-"colorscheme solarized
-set cursorline						" highlight current line
+"colorscheme jellybeans
+syntax on
 set background=dark
+colorscheme solarized
+set cursorline						" highlight current line
 set guifont=Monaco\ 7
 set listchars=tab:•\ ,trail:·
 

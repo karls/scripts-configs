@@ -17,7 +17,9 @@ set mouse=a
 "set guifont=Terminus\ 8
 set list
 set listchars=tab:⌞\ ,trail:·
-colorscheme slate
+"colorscheme slate
+set background=dark
+colorscheme solarized
 "set cursorline            " show line highlight
 
 ""Fix the stupid auto-indentation deletion
