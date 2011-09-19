@@ -80,7 +80,7 @@ PS1="\[$txtgrn\]\w\[$txtred\] $\[$txtwht\] "
 export TZ='Europe/Tallinn'
 #export TZ='Europe/London'
 export EDITOR='/usr/bin/vim'
-export BROWSER='/usr/bin/google-chrome'
+export BROWSER='/usr/bin/chromium-browser'
 export PATH=$PATH:$HOME/bin:$HOME/bin/android-sdk-linux_x86/tools
 export PATH=$PATH:$HOME/bin/android-sdk-linux_x86/platform-tools
 export PATH=$PATH:/usr/sbin
@@ -90,6 +90,9 @@ export SHET_HTTP_URL=http://18sg.net:8080/
 export SHET_HOST=18sg.net
 export JAVA_HOME=/usr/lib/jvm/java-6-sun-1.6.0.22
 export HISTSIZE=20000
-. shet_complete
-. ~/code/Scripts/shelf
+export CVSROOT=/home/karl/code
+export INPUTRC=~/.inputrc
+#. shet_complete
+#. ~/code/Scripts/shelf
 #. ~/bin/tbbvars.sh
+

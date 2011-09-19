@@ -1,4 +1,4 @@
-Config { font = "-*-terminus-*-*-*-*-12-*-*-*-*-*-*-u"
+Config { font = "-*-terminus-*-r-*-*-12-*-*-*-*-*-*-u"
 , bgColor      = "#000000"
 , fgColor      = "#758C5D"
 , position =  TopW L 90
@@ -8,7 +8,7 @@ Config { font = "-*-terminus-*-*-*-*-12-*-*-*-*-*-*-u"
 	, Run Memory ["-t","<usedratio>%"] 50
 	, Run Swap ["-t", "<usedratio>"] 50
 	, Run Com "/home/karl/bin/batterybar.sh" [""] "battery" 100
-	, Run BatteryP ["BAT1"] ["-t", "<left>"] 300
+	, Run BatteryP ["BAT0"] ["-t", "<left>"] 300
 	, Run Com "date" ["+'%H:%M'"] "cmdlinetime" 600
 	, Run Com "date" ["+'%a %d of %B'"] "cmdlinedate" 3000
 	, Run Com "/home/karl/bin/uptimebar.sh" [""] "cmdlineuptime" 600

@@ -30,7 +30,9 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 myManageHook = composeAll
 	[ className =? "Chromium"          --> doShift "1"
 	, className =? "Google-chrome"     --> doShift "1"
+	, className =? "Chromium-browser"     --> doShift "1"
 	, className =? "Thunar"            --> doShift "7"
+	, className =? "Nautilus"            --> doShift "8"
 	, className =? "Skype"             --> doShift "9"
 	, className =? "Pidgin"            --> doShift "9"
 	, className =? "Rhythmbox"         --> doShift "8"
@@ -48,10 +50,27 @@ myManageHook = composeAll
 	, className =? "sun-awt-X11-XFramePeer" --> doFloat
 	, className =? "com-mathworks-util-PostVMInit" --> doFloat
 	, className =? "RosterEngine" --> doFloat
+	, title     =? "Google - Bookmarks - Chromium" --> doFloat
 	]
 
 -- "IM" layout (9) has gridIM layout, others have Tall, Mirror, Grid, Full
-myLayouts = onWorkspace "9" (gridIM (1%6) (Title "Buddy List"))
+--myLayouts = onWorkspace "9" (Grid)
+--		$ tiled ||| Mirror tiled ||| Grid ||| Full
+--		where
+--		-- default tiling algorithm partitions the screen into two panes
+--		tiled = Tall nmaster delta ratio
+--
+--		-- The default number of windows in the master pane
+--		nmaster = 1
+--
+--		-- Default proportion of screen occupied by master pane
+--		ratio = 1/2
+--
+--		-- Percent of screen to increment by when resizing panes
+--		delta = 3/100
+
+-- this is the old layout from the config on my personal laptop.
+myLayouts = onWorkspace "9" (gridIM (1%6) (And (ClassName "Skype") (Role "MainWindow")))
 						$ tiled ||| Mirror tiled ||| Grid ||| Full
 							where
 								tiled = Tall nmaster delta ratio
@@ -107,7 +126,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
 		-- mod + f: make currently focused window floating and in the center
 	, ((modm, xK_f), withFocused
 									 $ windows . (flip W.float
-									 $ W.RationalRect 0.25 0.25 0.5 0.5))
+									 $ W.RationalRect 0.25 0.10 0.5 0.80))
 	, ((modm, 0x2d), shellPrompt sPConfig)
 	
 	, ((modm, xK_g), goToSelected gsConfig)
@@ -131,8 +150,8 @@ myConfig = defaultConfig
 	{ modMask = mod4Mask
 	--, Xmonad.workspaces = ["1:web", "2", "3", "4", "5", "6", "7:files", "8:mpd + irc", "9:im"]
 	--, terminal = "urxvt -cd $(cat $HOME/.pwd)"
-	--, terminal = "gnome-terminal --working-directory=$(cat $HOME/.pwd)"
-	, terminal = "xterm"
+	, terminal = "gnome-terminal --working-directory=$(cat $HOME/.pwd)"
+	--, terminal = "xterm"
 	, focusedBorderColor = "#FF0000"
 	, manageHook = myManageHook
 	, startupHook = setWMName "LG3D"

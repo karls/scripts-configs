@@ -1,4 +1,4 @@
-XTerm*font: -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
+#XTerm*font: -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
 XTerm*background: black
 XTerm*foreground: gray
 XTerm*cursorColor: gray
