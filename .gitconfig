@@ -1,0 +1,7 @@
+[color]
+	ui = auto
+[user]
+	name = Karl Sutt
+	email = karl@sutt.ee
+[web]
+	browser = /usr/bin/chromium
