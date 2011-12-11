@@ -4,16 +4,21 @@ XTerm*foreground: gray
 XTerm*cursorColor: gray
 XTerm*buffered: true
 
+UXTerm*background: black
+UXTerm*foreground: gray
+UXTerm*cursorColor: gray
+UXTerm*buffered: true
+
 URxvt*background: black
-URxvt*foreground: gray
+URxvt*foreground: white
 URxvt*cursorColor: gray
 URxvt*underlineColor: yellow
 URxvt*buffered: true
 URxvt*font: xft:Terminus:pixelsize=8:antialias=false
 URxvt*boldFont: xft:Terminus:bold:pixelsize=8:antialias=false
 URxvt*scrollBar: off
-URxvt*secondaryScroll: true
+URxvt*secondaryScroll: false
 URxvt*modifier: alt
 URxvt*perl-ext-common: default,matcher
-URxvt*urlLauncher: /usr/bin/google-chrome
+URxvt*urlLauncher: /usr/bin/chromium
 URxvt*matcher.button: 1

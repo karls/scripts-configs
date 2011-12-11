@@ -1,5 +1,5 @@
 if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
-	set fileencoding=utf8
+  set fileencoding=utf8
 endif
 set autoindent            " automatic indentation
 set hlsearch              " highlight search
@@ -10,16 +10,18 @@ set ruler                 " ruler to show current location
 "set showmatch            " show matching braces
 set shiftwidth=2
 set tabstop=2             " tab size = 2 spaces
+"set expandtab
 set nu                    " show line numbers
 syntax on                 " show syntax higlight
 set mouse=a
 
 "set guifont=Terminus\ 8
 set list
-set listchars=tab:⌞\ ,trail:·
-"colorscheme slate
+"set listchars=tab:⌞\ ,trail:·
+set listchars=tab:∟\ ,trail:·
+colorscheme jellybeans
 set background=dark
-colorscheme solarized
+"colorscheme solarized
 "set cursorline            " show line highlight
 
 ""Fix the stupid auto-indentation deletion

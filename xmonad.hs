@@ -29,9 +29,10 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
 myManageHook = composeAll
 	[ className =? "Chromium"          --> doShift "1"
+	, className =? "chromium"          --> doShift "1"
 	, className =? "Google-chrome"     --> doShift "1"
 	, className =? "Chromium-browser"     --> doShift "1"
-	, className =? "Thunar"            --> doShift "7"
+	, className =? "Thunar"            --> doShift "8"
 	, className =? "Nautilus"            --> doShift "8"
 	, className =? "Skype"             --> doShift "9"
 	, className =? "Pidgin"            --> doShift "9"
@@ -70,7 +71,7 @@ myManageHook = composeAll
 --		delta = 3/100
 
 -- this is the old layout from the config on my personal laptop.
-myLayouts = onWorkspace "9" (gridIM (1%6) (And (ClassName "Skype") (Role "MainWindow")))
+myLayouts = onWorkspace "9" (gridIM (1%6) (ClassName "Skype") )
 						$ tiled ||| Mirror tiled ||| Grid ||| Full
 							where
 								tiled = Tall nmaster delta ratio
@@ -150,8 +151,8 @@ myConfig = defaultConfig
 	{ modMask = mod4Mask
 	--, Xmonad.workspaces = ["1:web", "2", "3", "4", "5", "6", "7:files", "8:mpd + irc", "9:im"]
 	--, terminal = "urxvt -cd $(cat $HOME/.pwd)"
-	, terminal = "gnome-terminal --working-directory=$(cat $HOME/.pwd)"
-	--, terminal = "xterm"
+	--, terminal = "gnome-terminal --working-directory=$(cat $HOME/.pwd)"
+	, terminal = "xterm -bg black -fg white"
 	, focusedBorderColor = "#FF0000"
 	, manageHook = myManageHook
 	, startupHook = setWMName "LG3D"

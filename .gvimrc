@@ -7,10 +7,12 @@ let g:solarized_termtrans=1
 let g:solarized_termcolors=256
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
-colorscheme solarized
+colorscheme jellybeans
 set cursorline						" highlight current line
 set guifont=Monaco\ 7
-set listchars=tab:•\ ,trail:·
+set listchars=tab:⌞\ ,trail:·
+"set listchars=tab:∟\ ,trail:·
+"set listchars=tab:•\ ,trail:·
 
 " Lose the GUI stuff -- toolbars etc
 set guioptions-=m

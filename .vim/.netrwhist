@@ -1,6 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/usr/local/lib/python2.7/dist-packages/pgq'
 let g:netrw_dirhist_2='/etc/apache2/sites-enabled'
 let g:netrw_dirhist_3='/home/karl/.vim'
 let g:netrw_dirhist_4='/etc/apache2/sites-enabled'
+let g:netrw_dirhist_5='/home/karl/coursework/.git'
+let g:netrw_dirhist_6='/home/karl/code/crm/.git'
+let g:netrw_dirhist_7='/home/karl/tmp/ai/2011/MKAgent'
