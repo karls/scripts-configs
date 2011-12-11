@@ -1,0 +1,248 @@
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+#
+# This config file uses keycodes (bindsym) and was written for the QWERTY
+# layout.
+#
+# To get a config file with the same key positions, but for your current
+# layout, use the i3-config-wizard
+#
+
+
+set $mod Mod4
+
+
+# font for window titles. ISO 10646 = Unicode
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+# new font, terminus
+font -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+#bindsym $mod+p exec dmenu_run
+
+# change focus
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+semicolon focus right
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+period split h
+
+# split in vertical orientation
+bindsym $mod+comma split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, default)
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+d layout default
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move workspace 1
+bindsym $mod+Shift+2 move workspace 2
+bindsym $mod+Shift+3 move workspace 3
+bindsym $mod+Shift+4 move workspace 4
+bindsym $mod+Shift+5 move workspace 5
+bindsym $mod+Shift+6 move workspace 6
+bindsym $mod+Shift+7 move workspace 7
+bindsym $mod+Shift+8 move workspace 8
+bindsym $mod+Shift+9 move workspace 9
+bindsym $mod+Shift+0 move workspace 10
+
+bindsym $mod+Shift+Return exec "urxvt -name URxvt-floating"
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exit
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+	# These bindings trigger as soon as you enter the resize mode
+	
+	# They resize the border in the direction you pressed, e.g.
+	# when pressing left, the window is resized so that it has
+	# more space on its left
+	
+	bindsym h               resize grow left 10 px or 10 ppt
+	bindsym Shift+h         resize shrink   left 10 px or 10 ppt
+	
+	bindsym j               resize grow down 10 px or 10 ppt
+	bindsym Shift+j         resize shrink   down 10 px or 10 ppt
+	
+	bindsym k               resize grow up 10 px or 10 ppt
+	bindsym Shift+k         resize shrink   up 10 px or 10 ppt
+	
+	bindsym l               resize grow  right 10 px or 10 ppt
+	bindsym Shift+l         resize shrink   right 10 px or 10 ppt
+	
+	# same bindings, but for the arrow keys
+	bindsym Left        resize shrink left 10 px or 10 ppt
+	bindsym Shift+Left  resize grow   left 10 px or 10 ppt
+	
+	bindsym Down        resize shrink down 10 px or 10 ppt
+	bindsym Shift+Down  resize grow   down 10 px or 10 ppt
+	
+	bindsym Up          resize shrink up 10 px or 10 ppt
+	bindsym Shift+Up    resize grow   up 10 px or 10 ppt
+	
+	bindsym Right       resize shrink right 10 px or 10 ppt
+	bindsym Shift+Right resize grow   right 10 px or 10 ppt
+	
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+bindsym $mod+minus exec "dmenu_run -fn '-*-terminus-*-*-*-*-12-*-*-*-*-*-*-*'"
+
+mode "program" {
+	bindsym w exec chromium; mode "default"
+	bindsym g exec gvim; mode "default"
+	bindsym e exec "evince"; mode "default"
+	
+	bindsym Escape mode "default"
+}
+
+bindsym $mod+p mode "program"
+
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+# main bar
+bar {
+	# output the bar to main screen
+	output LVDS1
+	# dock it and stick it up top
+	mode dock
+	position top
+	# load custom bar config
+	status_command i3status --config ~/.i3/i3status.conf
+	# tray only on main screen
+	tray_output LVDS1
+	# slap some colours on
+	colors {
+	#	#foreground
+		statusline #696758
+	#	#background
+	#	background #002C2B
+	#	# colour_class foreground background
+		focused_workspace #C5BC8E #45484B
+		active_workspace #C5BC8E #333333
+	#	inactive_workspace #076461 #002C2B
+		urgent_workspace #ffffff #900000
+	}
+}
+
+# secondary bar
+bar {
+	# output to the secondary screen
+	output VGA1
+	mode dock
+	position top
+	status_command i3status --config ~/.i3/i3status.conf
+	# no tray
+	tray_output none
+	# slap some colours on
+	colors {
+	#	#foreground
+		statusline #696758
+	#	#background
+	#	background #002C2B
+	#	# colour_class foreground background
+		focused_workspace #C5BC8E #45484B
+		active_workspace #C5BC8E #333333
+	#	inactive_workspace #076461 #002C2B
+		urgent_workspace #ffffff #900000
+	}
+}
+
+# let's enable switching back and forth two workspaces
+workspace_auto_back_and_forth yes
+bindsym $mod+dead_caron workspace back_and_forth
+
+# all windows have just 1px border
+new_window 1pixel
+
+
+# XF86 keys -- Function + F1/F2/F3/.. and media keys
+bindsym XF86AudioLowerVolume exec "amixer set Master 1-"
+bindsym XF86AudioRaiseVolume exec "amixer set Master 1+"
+bindsym XF86AudioMute exec "amixer set Master toggle"
+bindsym XF86Sleep exec "sudo pm-suspend"
+bindsym XF86ScreenSaver exec "xscreensaver-command -lock"
+
+assign [class="Skype"] 9
+assign [class="Chromium"] 1
+for_window [class="MPlayer"] floating enable
+for_window [title="Options"] floating enable
+for_window [instance="URxvt-floating"] floating enable
+for_window [class="Skype"] border normal
