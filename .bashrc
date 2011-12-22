@@ -21,6 +21,9 @@ alias there='back'
 alias php='php5-cgi'
 alias ls='ls --color=auto'
 
+# enable vi editing mode
+set -o vi
+
 function android-create-project()
 {
 	android create project \
@@ -43,10 +46,34 @@ function mcd()
 	mkdir $1 && cd $1;
 }
 
-function here()
-{
-	echo $(pwd) > $HOME/.pwd
+#function here()
+#{
+#	echo $(pwd) > $HOME/.pwd
+#}
+
+#function here()
+#{
+#	#!/bin/bash
+#	
+#	desk=$(
+#	        i3-msg -t GET_WORKSPACES |
+#	        jshon -a -e focused -u -p -e name -u |
+#	        grep -A 1 true | tail -n 1)
+#	
+#	mkdir -p $HOME/.i3/desks/
+#	echo $(pwd) > $HOME/.i3/desks/$desk
+#}
+
+
+function there() {
+	desk=$(
+	        i3-msg -t GET_WORKSPACES |
+	        jshon -a -e focused -u -p -e name -u |
+	        grep -A 1 true | tail -n 1)
+	directory=$(cat $HOME/.i3/desks/$desk || echo $HOME)
+	cd $directory
 }
+
 
 function back()
 {
