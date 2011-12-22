@@ -17,9 +17,12 @@
 #feh --bg-scale ~/Pictures/wallpapers/1900_1080_kalendrita.jpg &
 #xsetroot -cursor_name left_ptr &
 #xsetroot -solid black &
-#exec trayer --edge top --align right --widthtype percent \
-#						--width 10 --height 15 --SetDockType true --SetPartialStrut true \
-#						--tint 0x000000 --transparent true --alpha 0 &
+#exec /usr/lib/notification-daemon-1.0/notification-daemon &
+#exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1&
+exec /usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh &
+exec trayer --edge top --align right --widthtype percent \
+						--width 10 --height 15 --SetDockType true --SetPartialStrut true \
+						--tint 0x000000 --transparent true --alpha 0 &
 #exec wicd-client &
 #exec google-chrome &
 exec nm-applet &
@@ -46,8 +49,8 @@ xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 8 6 7 4
 ###########################################
 # START WINDOW MANAGER
 ###########################################
-#exec ck-launch-session xmonad
+exec ck-launch-session xmonad
 #exec ck-launch-session /home/karl/dev/dwm-5.9/dwm
-exec ck-launch-session i3
+#exec ck-launch-session i3
 
 #kill $GNOME_KEYRING_PID
