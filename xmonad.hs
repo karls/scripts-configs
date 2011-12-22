@@ -71,7 +71,14 @@ myManageHook = composeAll
 --		delta = 3/100
 
 -- this is the old layout from the config on my personal laptop.
-myLayouts = onWorkspace "9" (gridIM (1%6) (ClassName "Skype") )
+myLayouts = onWorkspace "9" (gridIM (1%6)
+							(
+								(ClassName "Skype")
+								`And` (Not (Title "Options"))
+								`And` (Not (Role "Chats"))
+								`And` (Not (Role "CallWindowForm"))
+							)
+						)
 						$ tiled ||| Mirror tiled ||| Grid ||| Full
 							where
 								tiled = Tall nmaster delta ratio
@@ -104,13 +111,13 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
 	, ((controlMask, 0x1008ff11), spawn "amixer set Master 5-")
 	
 		-- XF86Suspend: display off
-	, ((0, 0x1008ffa7), spawn "sleep 0.3; xset dpms force off")
+	, ((0, 0x1008ff41), spawn "sleep 0.5; xset dpms force off")
 	
-		-- mod + XF86Suspend: suspend
-	, ((modm, 0x1008ffa7), spawn "sleep 0.3; sudo pm-suspend")
+		-- XF86Suspend: suspend
+	, ((0, 0x1008ff2f), spawn "sudo pm-suspend")
 	
 		-- mod + shift + l: lock screen
-	, ((modm .|. controlMask, xK_l), spawn "sleep 0.3; xscreensaver-command -lock")
+	, ((0, 0x1008ff2d), spawn "sleep 0.3; xscreensaver-command -lock")
 	
 		-- XF86AudioNext: next song in playlist
 --	, ((0, 0x1008ff17), spawn "mpc next")
@@ -150,9 +157,9 @@ gsConfig = defaultGSConfig
 myConfig = defaultConfig
 	{ modMask = mod4Mask
 	--, Xmonad.workspaces = ["1:web", "2", "3", "4", "5", "6", "7:files", "8:mpd + irc", "9:im"]
-	--, terminal = "urxvt -cd $(cat $HOME/.pwd)"
+	, terminal = "urxvt -cd $(cat $HOME/.pwd)"
 	--, terminal = "gnome-terminal --working-directory=$(cat $HOME/.pwd)"
-	, terminal = "xterm -bg black -fg white"
+	--, terminal = "xterm -bg black -fg white"
 	, focusedBorderColor = "#FF0000"
 	, manageHook = myManageHook
 	, startupHook = setWMName "LG3D"
