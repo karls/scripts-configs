@@ -11,7 +11,8 @@ set ruler                 " ruler to show current location
 set shiftwidth=2
 set tabstop=2             " tab size = 2 spaces
 "set expandtab
-set nu                    " show line numbers
+"set relativenumber        " show line numbers
+set nu        " show line numbers
 syntax on                 " show syntax higlight
 set mouse=a
 
