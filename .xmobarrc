@@ -29,9 +29,10 @@ Config {
 		Run Memory ["-t","<fc=#95C95F>MEM:</fc> <usedratio>%"] 50,
 		Run Swap ["-t", "<fc=#95C95F>SWAP:</fc> <usedratio>%"] 50,
 		Run Date "%H:%M, %a, %d %b %Y" "date" 300,
-		Run StdinReader
+		Run StdinReader,
+		Run Com "music-info.sh" [] "music" 30
 	],
 	sepChar = "%",
 	alignSep = "}{",
-	template = "%StdinReader% }{ %cpu% | %thermal0% | %memory% | %swap% | %battery% | %date%"
+	template = "%StdinReader% }{ %music% | %cpu% | %thermal0% | %memory% | %swap% | %battery% | %date%"
 }
