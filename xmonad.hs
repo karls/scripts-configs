@@ -92,7 +92,7 @@ newKeys x = M.union (keys defaultConfig x) (M.fromList (myKeys x))
 myKeys conf@(XConfig {XMonad.modMask = modm}) =
 	[
 		-- XF86AudioRaiseVolume: master speaker
-	  ((0, 0x1008ff13), spawn "amixer set Master 1+")
+	 ((0, 0x1008ff13), spawn "amixer set Master 1+")
 		
 		-- XF86AudioLowerVolume: master speaker
 	, ((0, 0x1008ff11), spawn "amixer set Master 1-")
@@ -102,7 +102,16 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
 	
 		-- XF86AudioPlay: play/pause mpc
 --	, ((0, 0x1008ff14), spawn "mpc toggle")
-	, ((0, 0x1008ff14), spawn "banshee --toggle-playing")
+	, ((0, 0x1008ff14), spawn "exaile --play-pause")
+	
+		-- XF86AudioNext: next song in playlist
+--	, ((0, 0x1008ff17), spawn "mpc next")
+	, ((0, 0x1008ff17), spawn "exaile --next")
+	
+		-- XF86AudioPrev: previous song in playlist
+--	, ((0, 0x1008ff16), spawn "mpc prev") 
+	, ((0, 0x1008ff16), spawn "exaile --prev")
+	
 	
 		-- ctrl + XF86AudioRaiseVolume: master speaker +5
 	, ((controlMask, 0x1008ff13), spawn "amixer set Master 5+")
@@ -118,14 +127,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
 	
 		-- mod + shift + l: lock screen
 	, ((0, 0x1008ff2d), spawn "sleep 0.3; xscreensaver-command -lock")
-	
-		-- XF86AudioNext: next song in playlist
---	, ((0, 0x1008ff17), spawn "mpc next")
-	, ((0, 0x1008ff17), spawn "banshee --next")
-	
-		-- XF86AudioPrev: previous song in playlist
---	, ((0, 0x1008ff16), spawn "mpc prev") 
-	, ((0, 0x1008ff17), spawn "banshee --previous")
 	
 		-- go back to previous desk
 	, ((modm, 0xfe5a), toggleWS)
