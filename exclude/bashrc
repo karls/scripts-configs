@@ -5,6 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# start X if logged in on tty1
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
 	startx
 	logout
@@ -15,14 +16,16 @@ alias suspend='sudo pm-suspend'
 alias reboot='sudo reboot'
 alias poweroff='sudo poweroff'
 alias arduino='~/arduino/arduino'
-alias ll='ls -l --color=auto'
+alias ls='ls --color=auto'
+alias ll='ls -l'
 alias ..='cd ..'
 alias there='back'
 alias php='php5-cgi'
-alias ls='ls --color=auto'
+alias mount="sudo mount"
+alias umount="sudo umount"
 
 # enable vi editing mode
-set -o vi
+#set -o vi
 
 function android-create-project()
 {
@@ -109,11 +112,11 @@ txt_l_gray='\e[1;30m' # Dark gray
 
 # Nice, minimal prompt
 # ~/path/to/something $
-PS1="\[$txtgrn\]\w\[$txtred\] $\[$txtwht\] "
+#PS1="\[$txtgrn\]\w\[$txtred\] $\[$txtwht\] "
 
 # Environment variables
-export TZ='Europe/Tallinn'
-#export TZ='Europe/London'
+#export TZ='Europe/Tallinn'
+export TZ='Europe/London'
 export EDITOR='/usr/bin/vim'
 export BROWSER='/usr/bin/chromium'
 export PATH=$PATH:$HOME/bin:$HOME/bin/android-sdk-linux_x86/tools
@@ -127,6 +130,10 @@ export JAVA_HOME=/usr/lib/jvm/java-6-sun-1.6.0.22
 export HISTSIZE=20000
 export CVSROOT=/home/karl/code
 export INPUTRC=~/.inputrc
+export LANG="en_GB.UTF-8"
+#export LC_COLLATE="C"
+#export TERM=rxvt
+
 #. shet_complete
 #. ~/code/Scripts/shelf
 #. ~/bin/tbbvars.sh

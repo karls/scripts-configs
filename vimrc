@@ -14,7 +14,8 @@ set tabstop=2             " tab size = 2 spaces
 "set relativenumber        " show line numbers
 set nu        " show line numbers
 syntax on                 " show syntax higlight
-set mouse=a
+"instead of set mouse=a, we do set mouse=v, a recent change
+set mouse=v
 
 "set guifont=Terminus\ 8
 set list

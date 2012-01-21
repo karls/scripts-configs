@@ -17,7 +17,6 @@ URxvt*underlineColor: yellow
 URxvt*buffered: true
 URxvt*font: xft:Terminus:size=8:antialias=false
 URxvt*boldFont: xft:Terminus:bold:pixelsize=8:antialias=false
-!URxvt*boldFont: xft:Terminus:size=8:antialias=false
 URxvt*scrollBar: off
 URxvt*secondaryScroll: false
 URxvt*modifier: alt
