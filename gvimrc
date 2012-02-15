@@ -3,14 +3,16 @@
 "colorscheme jellybeans
 syntax on
 set background=dark
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
-colorscheme jellybeans
-set cursorline						" highlight current line
+"let g:solarized_termtrans=1
+"let g:solarized_termcolors=256
+"let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
+"colorscheme jellybeans
+colorscheme vilight
+"set cursorline						" highlight current line
 set guifont=Monaco\ 7
 set listchars=tab:⌞\ ,trail:·
+set mouse=a
 "set listchars=tab:∟\ ,trail:·
 "set listchars=tab:•\ ,trail:·
 
