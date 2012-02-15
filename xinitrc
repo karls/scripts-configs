@@ -14,7 +14,7 @@
 #export GNOME_KEYRING_PID
 #export GNOME_KEYRING_SOCKET
 
-#feh --bg-scale ~/Pictures/wallpapers/1900_1080_kalendrita.jpg &
+feh --bg-scale ~/Pictures/wallpapers/New\ York\ City\ Madness.jpg &
 #xsetroot -cursor_name left_ptr &
 #xsetroot -solid black &
 #exec /usr/lib/notification-daemon-1.0/notification-daemon &
