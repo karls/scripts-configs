@@ -13,20 +13,6 @@ fi
 
 
 # functions
-function here()
-{
-	echo $(pwd) > $HOME/.pwd
-}
-
-function back()
-{
-cd $(cat $HOME/.pwd)
-}
-
-function cdh()
-{
-cd && here
-}
 
 function -()
 {
@@ -44,8 +30,9 @@ alias poweroff='sudo poweroff'
 alias arduino='~/arduino/arduino'
 alias ll='ls -l'
 alias ..='cd ..'
-alias there='back'
 alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
+alias I='pacman -Sy'
+alias S='pacman -Ss'
 
 # Environment variables
 #export TZ='Europe/Tallinn'
@@ -64,7 +51,11 @@ export JAVA_HOME=/usr/lib/jvm/java-6-sun-1.6.0.22
 export CVSROOT=/home/karl/code
 export INPUTRC=~/.inputrc
 export LANG="en_GB.UTF-8"
+export CRM_SETTINGS=$HOME/dev/crm/dev_settings.cfg
 #export LC_COLLATE="C"
 #export TERM=rxvt
+
+autoload -U select-word-style
+select-word-style bash
 
 [[ -f ~/.zshrc ]] && . ~/.zshrc
