@@ -1,14 +1,14 @@
 *visualBell: false
 
 !XTerm*font: -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
-xterm*background: black
-xterm*foreground: gray
-xterm*cursorColor: gray
-xterm*buffered: true
-xterm*faceName: terminus:normal:pixelsize=8
-xterm*dynamicColors: true
-xterm*geometry: 160x25
-xterm*saveLines: 2000
+XTerm*background: black
+XTerm*foreground: gray
+XTerm*cursorColor: gray
+XTerm*buffered: true
+XTerm*faceName: terminus:normal:pixelsize=8
+XTerm*dynamicColors: true
+XTerm*geometry: 160x25
+XTerm*saveLines: 2000
 
 URxvt*background: black
 URxvt*foreground: white
