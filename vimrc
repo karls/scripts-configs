@@ -15,15 +15,15 @@ set tabstop=2             " tab size = 2 spaces
 set nu        " show line numbers
 syntax on                 " show syntax higlight
 "instead of set mouse=a, we do set mouse=v, a recent change
-set mouse=v
+set mouse=a
 
 "set guifont=Terminus\ 8
 set list
 "set listchars=tab:⌞\ ,trail:·
 set listchars=tab:∟\ ,trail:·
-colorscheme jellybeans
-set background=dark
-"colorscheme solarized
+colorscheme default
+"colorscheme jellybeans
+"set background=dark
 "set cursorline            " show line highlight
 
 ""Fix the stupid auto-indentation deletion
@@ -41,7 +41,10 @@ set nowritebackup
 
 "set tw=80                " auto-wrap long lines
 
-nmap <F3> a<C-R>=strftime("%d/%m/%Y")<CR><Esc>
+nmap <F3> <C-R>=strftime("%d/%m/%Y")<CR><Esc>
 imap <F3> <C-R>=strftime("%d/%m/%Y")<CR>
 filetype plugin on
 set ofu=syntaxcomplete#Complete
+
+set statusline=%<\ %n:%f\ %y%{fugitive#statusline()}%m%r%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
+set laststatus=2
