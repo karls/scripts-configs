@@ -1,14 +1,14 @@
 *visualBell: false
 
-!XTerm*font: -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
-XTerm*background: black
-XTerm*foreground: gray
-XTerm*cursorColor: gray
-XTerm*buffered: true
-XTerm*faceName: terminus:normal:pixelsize=8
-XTerm*dynamicColors: true
-XTerm*geometry: 160x25
-XTerm*saveLines: 2000
+UXTerm*background: black
+UXTerm*foreground: gray
+UXTerm*cursorColor: gray
+UXTerm*buffered: true
+UXTerm*faceName: terminus:normal:pixelsize=8
+UXTerm*dynamicColors: true
+UXTerm*geometry: 160x25
+UXTerm*saveLines: 2000
+UXTerm*utf8: 1
 
 URxvt*background: black
 URxvt*foreground: white
