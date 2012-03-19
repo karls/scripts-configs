@@ -25,15 +25,15 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 
 # start a terminal, cd'ing into the correct directory
-bindsym $mod+Return exec --no-startup-id "/home/karl/bin/i3-exec xterm"
+bindsym $mod+Return exec --no-startup-id "/home/karl/bin/i3-exec gnome-terminal"
 
 # launch a floating terminal with 80x40 geometry, cd'ing into the correct
 # directory
-bindsym $mod+Shift+Return exec --no-startup-id "/home/karl/bin/i3-exec xterm -name xterm-floating -geometry 80x40"
+bindsym $mod+Shift+Return exec --no-startup-id "/home/karl/bin/i3-exec gnome-terminal --disable-factory --name=term-floating --geometry=80x40"
 
 
 # and enable floating
-for_window [instance="xterm-floating"] floating enable
+for_window [instance="term-floating"] floating enable
 for_window [class="MPlayer"] floating enable
 for_window [title="Options"] floating enable
 for_window [title="fexprec"] floating enable
