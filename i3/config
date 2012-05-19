@@ -203,6 +203,8 @@ bindsym $mod+r mode "resize"
 # program mode, launches stuff if in program mode
 mode "program" {
 	bindsym w exec --no-startup-id chromium; mode "default"
+	bindsym g exec --no-startup-id gvim; mode "default"
+	bindsym e exec --no-startup-id evince; mode "default"
 	
 	bindsym Escape mode "default"
 }

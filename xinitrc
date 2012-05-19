@@ -14,7 +14,8 @@
 #export GNOME_KEYRING_PID
 #export GNOME_KEYRING_SOCKET
 
-feh --bg-scale ~/Pictures/wallpapers/New\ York\ City\ Madness.jpg &
+export DESKTOP_WALLPAPER="~/Pictures/wallpapers/New\ York\ City\ Madness.jpg"
+feh --bg-scale $(echo $DESKTOP_WALLPAPER) &
 #xsetroot -cursor_name left_ptr &
 #xsetroot -solid black &
 #exec /usr/lib/notification-daemon-1.0/notification-daemon &

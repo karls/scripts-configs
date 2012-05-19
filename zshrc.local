@@ -42,6 +42,7 @@ export BROWSER='/usr/bin/chromium'
 export PATH=$PATH:$HOME/bin:$HOME/bin/android-sdk-linux_x86/tools
 export PATH=$PATH:$HOME/bin/android-sdk-linux_x86/platform-tools
 export PATH=$PATH:/usr/sbin
+export PATH=$PATH:$HOME/.gem/ruby/1.9.1/bin
 export OOO_FORCE_DESKTOP=gnome
 export PYTHONSTARTUP=~/.pythonrc
 export SHET_HTTP_URL=http://18sg.net:8080/
@@ -52,6 +53,7 @@ export CVSROOT=/home/karl/code
 export INPUTRC=~/.inputrc
 export LANG="en_GB.UTF-8"
 export CRM_SETTINGS=$HOME/dev/crm/dev_settings.cfg
+#export GOPATH=$GOPATH:$HOME/bin
 #export LC_COLLATE="C"
 #export TERM=rxvt
 

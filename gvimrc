@@ -8,7 +8,8 @@ set relativenumber
 "let g:solarized_termcolors=256
 "let g:solarized_contrast="high"
 "let g:solarized_visibility="high"
-colorscheme jellybeans
+"colorscheme jellybeans
+colorscheme ir_black
 "colorscheme vilight
 set cursorline						" highlight current line
 set guifont=Monaco\ 7

@@ -43,7 +43,8 @@ set nowritebackup
 
 nmap <F3> <C-R>=strftime("%d/%m/%Y")<CR><Esc>
 imap <F3> <C-R>=strftime("%d/%m/%Y")<CR>
-filetype plugin on
+"filetype plugin indent on
+filetype plugin indent on
 set ofu=syntaxcomplete#Complete
 
 set statusline=%<\ %n:%f\ %y%{fugitive#statusline()}%m%r%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
