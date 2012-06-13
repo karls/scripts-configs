@@ -35,8 +35,8 @@ alias I='pacman -Sy'
 alias S='pacman -Ss'
 
 # Environment variables
-#export TZ='Europe/Tallinn'
-export TZ='Europe/London'
+export TZ='Europe/Tallinn'
+#export TZ='Europe/London'
 export EDITOR='/usr/bin/vim'
 export BROWSER='/usr/bin/chromium'
 export PATH=$PATH:$HOME/bin:$HOME/bin/android-sdk-linux_x86/tools
