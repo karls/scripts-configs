@@ -41,6 +41,7 @@ for_window [title="fexprec"] floating enable
 
 assign [class="(?i)chromium"] 1
 assign [class="(?i)skype"] 9
+assign [class="(?i)transmission"] 8
 
 workspace 1 output LVDS1
 workspace 2 output VGA1
