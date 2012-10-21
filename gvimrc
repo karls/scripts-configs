@@ -1,7 +1,7 @@
 " Override or further specify some .vimrc settings
 
 "colorscheme jellybeans
-syntax on
+syntax enable
 set background=dark
 set relativenumber
 "let g:solarized_termtrans=1
@@ -9,8 +9,10 @@ set relativenumber
 "let g:solarized_contrast="high"
 "let g:solarized_visibility="high"
 "colorscheme jellybeans
-colorscheme ir_black
+"colorscheme ir_black
+colorscheme Tomorrow-Night-Eighties
 "colorscheme vilight
+"colorscheme solarized
 set cursorline						" highlight current line
 set guifont=Monaco\ 7
 set listchars=tab:⌞\ ,trail:·

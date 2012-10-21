@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/karl/.shell-fm'
 let g:netrw_dirhist_2='/etc/rc.d'
 let g:netrw_dirhist_3='/home/karl/.i3'
+let g:netrw_dirhist_4='/home/karl/dev/crm/cal/fixtures'
+let g:netrw_dirhist_5='/home/karl/dev/crm/cal/templatetags'
+let g:netrw_dirhist_6='/home/karl/.notifyosdconf'
+let g:netrw_dirhist_7='/home/karl/dev/scripts-configs/vim/ftplugin'
