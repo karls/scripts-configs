@@ -12,3 +12,5 @@ zstyle :compinstall filename '/home/karl/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
