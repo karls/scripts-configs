@@ -32,6 +32,7 @@ feh --bg-scale $(echo $DESKTOP_WALLPAPER) &
 #exec google-chrome &
 #exec nm-applet &
 #exec pidgin &
+exec volumeicon &
 exec skype &
 #exec dropbox &
 #exec thunar --daemon &
@@ -39,7 +40,7 @@ exec skype &
 #exec nautilus --no-desktop &
 exec xscreensaver -nosplash &
 #exec gnome-volume-control-applet &
-exec xrdb -merge .Xresources &
+xrdb -merge .Xresources
 #exec rhythmbox &
 #setxkbmap -layout gb
 setxkbmap -layout "gb,ee" \ -option "grp:alt_shift_toggle"
