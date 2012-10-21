@@ -21,15 +21,22 @@ floating_modifier Mod4
 # launch the polkit gnome authentication agent, needed for running nm-applet
 # nicely
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# notification daemon
+exec --no-startup-id dunst
+# i can haz powers, yes?
+exec --no-startup-id xfce4-power-manager
 # launch nm-applet
 exec --no-startup-id nm-applet
 
 # start a terminal, cd'ing into the correct directory
-bindsym $mod+Return exec --no-startup-id "/home/karl/bin/i3-exec gnome-terminal"
+#bindsym $mod+Return exec --no-startup-id "/home/karl/bin/i3-exec gnome-terminal"
+bindsym $mod+Return exec --no-startup-id "/home/karl/bin/i3-exec uxterm"
 
 # launch a floating terminal with 80x40 geometry, cd'ing into the correct
 # directory
-bindsym $mod+Shift+Return exec --no-startup-id "/home/karl/bin/i3-exec gnome-terminal --disable-factory --name=term-floating --geometry=80x40"
+#bindsym $mod+Shift+Return exec --no-startup-id "/home/karl/bin/i3-exec gnome-terminal --disable-factory --name=term-floating --geometry=80x40"
+bindsym $mod+Shift+Return exec --no-startup-id "/home/karl/bin/i3-exec uxterm -name term-floating -geometry 80x40"
 
 
 # and enable floating
@@ -37,13 +44,19 @@ for_window [instance="term-floating"] floating enable
 for_window [class="MPlayer"] floating enable
 for_window [title="Options"] floating enable
 for_window [title="fexprec"] floating enable
+for_window [class="(?i)chromium"] border 1pixel
+for_window [class="(?i)firefox"] border 1pixel
+for_window [class="(?i)gvim"] border 1pixel
+for_window [class="(?i)xfce4-notifyd"] floating enable border none
+for_window [class="(?i)spotify"] border none
 
 
-assign [class="(?i)chromium"] 1
-assign [class="(?i)skype"] 9
+assign [class="(?i)chromium"] 1:web
+assign [class="(?i)firefox"] 1:web
+assign [class="(?i)skype"] 9:skype
 assign [class="(?i)transmission"] 8
 
-workspace 1 output LVDS1
+workspace "1:web" output LVDS1
 workspace 2 output VGA1
 workspace 3 output LVDS1
 workspace 4 output VGA1
@@ -51,7 +64,7 @@ workspace 5 output LVDS1
 workspace 6 output VGA1
 workspace 7 output LVDS1
 workspace 8 output VGA1
-workspace 9 output LVDS1
+workspace "9:skype" output LVDS1
 workspace 10 output VGA1
 
 
@@ -60,7 +73,7 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 1+"
 bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 1-"
 bindsym XF86AudioMute        exec --no-startup-id "amixer set Master toggle"
 bindsym XF86ScreenSaver      exec --no-startup-id "xscreensaver-command -lock"
-bindsym XF86Sleep            exec --no-startup-id "sudo pm-suspend"
+#bindsym XF86Sleep            exec --no-startup-id "sudo pm-suspend"
 # toggle monitor on/off
 bindsym XF86Display          exec --no-startup-id "/home/karl/bin/monitor-toggle"
 
@@ -124,7 +137,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1
+bindsym $mod+1 workspace 1:web
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
@@ -132,13 +145,13 @@ bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
+bindsym $mod+9 workspace 9:skype
 bindsym $mod+0 workspace 10
 
 
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move workspace 1
+bindsym $mod+Shift+1 move workspace 1:web
 bindsym $mod+Shift+2 move workspace 2
 bindsym $mod+Shift+3 move workspace 3
 bindsym $mod+Shift+4 move workspace 4
@@ -146,7 +159,7 @@ bindsym $mod+Shift+5 move workspace 5
 bindsym $mod+Shift+6 move workspace 6
 bindsym $mod+Shift+7 move workspace 7
 bindsym $mod+Shift+8 move workspace 8
-bindsym $mod+Shift+9 move workspace 9
+bindsym $mod+Shift+9 move workspace 9:skype
 bindsym $mod+Shift+0 move workspace 10
 
 
@@ -218,6 +231,9 @@ bindsym $mod+p mode "program"
 bar {
 	status_command i3status
 	position top
+	#mode hide
+	#modifier $mod
+	tray_output primary
 }
 
 #######################################################################
