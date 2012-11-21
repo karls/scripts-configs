@@ -6,7 +6,12 @@ endif
 
 
 call pathogen#infect()
+syntax on                 " show syntax higlight
+filetype on
+filetype indent on
+filetype plugin on
 
+"set rtp+=/usr/share/go/misc/vim
 
 
 set autoindent            " automatic indentation
@@ -18,12 +23,11 @@ set ruler                 " ruler to show current location
 "set showmatch            " show matching braces
 set shiftwidth=2
 set tabstop=2             " tab size = 2 spaces
-"set expandtab
+set expandtab
 
 set relativenumber        " show line numbers
 "set nu        " show line numbers
 
-syntax on                 " show syntax higlight
 "instead of set mouse=a, we do set mouse=v, a recent change
 
 set mouse=a
@@ -56,7 +60,6 @@ set nowritebackup
 nmap <F3> <C-R>=strftime("%d/%m/%Y")<CR><Esc>
 imap <F3> <C-R>=strftime("%d/%m/%Y")<CR>
 
-filetype plugin indent on
 
 set ofu=syntaxcomplete#Complete
 autocmd FileType python set omnifunc=pythoncomplete#Complete

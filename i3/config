@@ -30,13 +30,13 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id nm-applet
 
 # start a terminal, cd'ing into the correct directory
-#bindsym $mod+Return exec --no-startup-id "/home/karl/bin/i3-exec gnome-terminal"
-bindsym $mod+Return exec --no-startup-id "/home/karl/bin/i3-exec uxterm"
+bindsym $mod+Return exec --no-startup-id "/home/karl/bin/i3-exec sakura"
+#bindsym $mod+Return exec --no-startup-id "/home/karl/bin/i3-exec uxterm"
 
 # launch a floating terminal with 80x40 geometry, cd'ing into the correct
 # directory
-#bindsym $mod+Shift+Return exec --no-startup-id "/home/karl/bin/i3-exec gnome-terminal --disable-factory --name=term-floating --geometry=80x40"
-bindsym $mod+Shift+Return exec --no-startup-id "/home/karl/bin/i3-exec uxterm -name term-floating -geometry 80x40"
+bindsym $mod+Shift+Return exec --no-startup-id "/home/karl/bin/i3-exec sakura --disable-factory --name=term-floating --geometry=80x40"
+#bindsym $mod+Shift+Return exec --no-startup-id "/home/karl/bin/i3-exec uxterm -name term-floating -geometry 80x40"
 
 
 # and enable floating
@@ -72,7 +72,7 @@ workspace 10 output VGA1
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 1+"
 bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 1-"
 bindsym XF86AudioMute        exec --no-startup-id "amixer set Master toggle"
-bindsym XF86ScreenSaver      exec --no-startup-id "xscreensaver-command -lock"
+bindsym XF86ScreenSaver      exec --no-startup-id "i3lock -i /home/karl/Pictures/wallpapers/milky-way.png"
 #bindsym XF86Sleep            exec --no-startup-id "sudo pm-suspend"
 # toggle monitor on/off
 bindsym XF86Display          exec --no-startup-id "/home/karl/bin/monitor-toggle"

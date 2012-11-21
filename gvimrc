@@ -14,7 +14,8 @@ colorscheme Tomorrow-Night-Eighties
 "colorscheme vilight
 "colorscheme solarized
 set cursorline						" highlight current line
-set guifont=Monaco\ 7
+"set guifont=Monaco\ 7
+set guifont=Terminus\ 7
 set listchars=tab:⌞\ ,trail:·
 set mouse=a
 "set listchars=tab:∟\ ,trail:·
